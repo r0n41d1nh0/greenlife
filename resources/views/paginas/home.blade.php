@@ -6,7 +6,7 @@
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.84.0">
-    <title>Headers · Bootstrap v5.0</title>
+    <title>Vida Verde</title>
 
 
     <!-- Bootstrap core CSS -->
