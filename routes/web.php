@@ -18,3 +18,5 @@ Route::get('/', function () {
 });
 */
 Route::get('/', 'App\Http\Controllers\PaginasController@home')->name('inicio');
+
+Route::get('/productos', 'App\Http\Controllers\ProductosController@lista')->name('productos.lista');
