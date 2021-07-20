@@ -7,6 +7,11 @@
     <li class="breadcrumb-item"><a href="{{ route('productos.nuevo') }}">Nuevo</a></li>
   </ol>
   <hr>
+  @if(Session::has('success'))
+    <div class="alert alert-success">
+      {{Session::get('success')}}
+    </div>
+  @endif
   <div class="row">
     <div class="col-12">
       <h2>Productos</h2>
@@ -29,7 +34,7 @@
                 <td>{{ $item->descripcion }}</td>
                 <td>{{ $item->medida }}</td>
                 <td>{{ $item->precio }}</td>
-                <td></td>
+                <td><a href="{{ route('productos.editar', $item->id )}}" class="">Editar</td>
             </tr>
             @endforeach
           </tbody>

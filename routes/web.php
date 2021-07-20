@@ -23,3 +23,5 @@ Route::get('/', 'App\Http\Controllers\PaginasController@home')->name('inicio');
 Route::get('/productos', 'App\Http\Controllers\ProductosController@lista')->name('productos.lista');
 Route::get('/productos/nuevo', 'App\Http\Controllers\ProductosController@nuevo')->name('productos.nuevo');
 Route::post('/productos/nuevo', 'App\Http\Controllers\ProductosController@registrar')->name('productos.registrar');
+Route::get('/productos/{id}/editar', 'App\Http\Controllers\ProductosController@editar')->name('productos.editar');
+Route::post('/productos/actualizar', 'App\Http\Controllers\ProductosController@actualizar')->name('productos.actualizar');

@@ -30,6 +30,22 @@ class ProductosController extends Controller
 			'medida' => $request->medida,
 			'precio' => $request->precio
 		]);
-        return redirect()->route('productos.lista');
+        return redirect()->route('productos.lista')->withSuccess('Operación exitosa');
+	}
+
+	public function editar($id)
+	{
+		$producto = Producto::find($id);
+    	return view('productos.editar',compact(['producto']) );
+	}
+
+	public function actualizar(Request $request){
+		$producto=Producto::find($request->id);
+		$producto->descripcion = $request->descripcion;
+		$producto->medida = $request->medida;
+		$producto->precio = $request->precio;
+	
+        $producto->save(); 
+		return redirect()->route('productos.editar',$producto->id)->withSuccess('Operación exitosa');
 	}
 }
