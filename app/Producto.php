@@ -9,6 +9,6 @@ class Producto extends Model
     protected $table='producto';
     public $timestamps=false;
 
-
+    protected $fillable = ['descripcion','medida','precio'];
 
 }

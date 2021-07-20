@@ -19,4 +19,7 @@ Route::get('/', function () {
 */
 Route::get('/', 'App\Http\Controllers\PaginasController@home')->name('inicio');
 
+//Productos
 Route::get('/productos', 'App\Http\Controllers\ProductosController@lista')->name('productos.lista');
+Route::get('/productos/nuevo', 'App\Http\Controllers\ProductosController@nuevo')->name('productos.nuevo');
+Route::post('/productos/nuevo', 'App\Http\Controllers\ProductosController@registrar')->name('productos.registrar');
