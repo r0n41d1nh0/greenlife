@@ -32,3 +32,15 @@ Route::get('/personas/nuevo', 'App\Http\Controllers\PersonasController@nuevo')->
 Route::post('/personas/nuevo', 'App\Http\Controllers\PersonasController@registrar')->name('personas.registrar');
 Route::get('/personas/{id}/editar', 'App\Http\Controllers\PersonasController@editar')->name('personas.editar');
 Route::post('/personas/actualizar', 'App\Http\Controllers\PersonasController@actualizar')->name('personas.actualizar');
+
+//Ingresos
+
+Route::get('/ingresos', 'App\Http\Controllers\IngresosController@lista')->name('ingresos.lista');
+Route::get('/ingresos/nuevo', 'App\Http\Controllers\IngresosController@nuevo')->name('ingresos.nuevo');
+Route::post('/ingresos/nuevo', 'App\Http\Controllers\IngresosController@registrar')->name('ingresos.registrar');
+Route::get('/ingresos/{id}/editar', 'App\Http\Controllers\IngresosController@editar')->name('ingresos.editar');
+Route::post('/ingresos/actualizar', 'App\Http\Controllers\IngresosController@actualizar')->name('ingresos.actualizar');
+// Ingresos - Detalle
+Route::get('/ingresos/{id}/detalle', 'App\Http\Controllers\IngresosController@lista_detalle')->name('ingresos.detalle.lista');
+Route::post('/ingresos/nuevo-detalle', 'App\Http\Controllers\IngresosController@registrar_detalle')->name('ingresos.detalle.registrar');
+Route::post('/ingresos/borrar-detalle', 'App\Http\Controllers\IngresosController@borrar_detalle')->name('ingresos.detalle.borrar');

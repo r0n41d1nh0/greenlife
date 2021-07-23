@@ -40,7 +40,7 @@
                 <td>{{ $item->direccion }}</td>
                 <td>{{ $item->telefono }}</td>
                 <td>@if($item->tipo=="C") Cliente @else Proveedor @endif</td>
-                <td><a href="{{ route('personas.editar', $item->id )}}" class="">Editar</td>
+                <td><a href="{{ route('personas.editar', $item->id )}}" class="">Editar</a></td>
             </tr>
             @endforeach
           </tbody>

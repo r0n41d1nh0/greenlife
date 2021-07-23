@@ -4,7 +4,7 @@
     <li class="breadcrumb-item">
       <a href="{{ route('productos.lista') }}">Productos</a>
     </li>
-    <li class="breadcrumb-item"><a href="{{ route('productos.lista') }}">Nuevo</a></li>
+    <li class="breadcrumb-item"><a href="{{ route('productos.nuevo') }}">Nuevo</a></li>
   </ol>
   <hr>
   <div class="row">

@@ -8,7 +8,7 @@
   </ol>
   <div class="row">
     <div class="col-12">
-      <h1>Bienvid@</h1>
+      <h1>Bienvenid@</h1>
       <p>Control de ventas</p>
     </div>
   </div>

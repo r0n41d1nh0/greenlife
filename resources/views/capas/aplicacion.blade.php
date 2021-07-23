@@ -24,7 +24,7 @@
 
 		  <ul class="nav nav-pills">
 			<li class="nav-item"><a href="#" class="nav-link">Inventario</a></li>
-			<li class="nav-item"><a href="#" class="nav-link">Ingresos</a></li>
+			<li class="nav-item"><a href="{{ route('ingresos.lista') }}" class="nav-link">Ingresos</a></li>
 			<li class="nav-item"><a href="#" class="nav-link">Salidas</a></li>
 			<li class="nav-item"><a href="{{ route('productos.lista') }}" class="nav-link">Productos</a></li>
 			<li class="nav-item"><a href="{{ route('personas.lista') }}" class="nav-link">Personas</a></li>
