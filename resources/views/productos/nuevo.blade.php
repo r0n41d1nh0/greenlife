@@ -25,7 +25,7 @@
           </select>
         </div>
         <div class="col-md-2">
-          <label>Precio</label>
+          <label>Precio para venta</label>
           <input type="number" name="precio" class="form-control form-control-sm" required>
         </div>
         <br>
