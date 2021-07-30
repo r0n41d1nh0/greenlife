@@ -22,7 +22,7 @@
         </div>
         <div class="col-md-2">
           <label>Documento</label>
-          <input type="text" name="documento" class="form-control form-control-sm" autocomplete="off" required>
+          <input type="text" name="documento" class="form-control form-control-sm" autocomplete="off">
         </div>
         <div class="col-md-4">
           <label>Nombres</label>
@@ -34,7 +34,7 @@
         </div>
         <div class="col-md-2">
           <label>Telefono</label>
-          <input type="text" name="telefono" class="form-control form-control-sm" autocomplete="off" required>
+          <input type="text" name="telefono" class="form-control form-control-sm" autocomplete="off">
         </div>
         <div class="col-md-2">
           <label>Tipo</label>

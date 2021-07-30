@@ -20,6 +20,7 @@ class Inventario extends Model
                             'producto.descripcion',
                             'producto.precio'
                             )
+                        ->where('inventario.cantidad','>','0')
                         ->orderBy('inventario.id','desc');
     }
 

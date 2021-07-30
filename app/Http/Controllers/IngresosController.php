@@ -29,19 +29,18 @@ class IngresosController extends Controller
 
 	public function registrar(Request $request)
 	{
-    	Ingreso::create([
+    	$ingreso = Ingreso::create([
 			'persona_id' => $request->persona_id,
 			'fecha' => $request->fecha
 		]);
-        return redirect()->route('ingresos.lista')->withSuccess('Operación exitosa');
+		return redirect()->route('ingresos.detalle.lista',$ingreso->id )->withSuccess('Operación exitosa');
 	}
 
 	public function editar($id)
 	{
 		$ingreso = Ingreso::find($id);
 		$personas = Persona::where('tipo','P')->get();
-		$proveedor = Persona::find($ingreso->persona_id);
-    	return view('ingresos.editar',compact(['ingreso','personas','proveedor']) );
+    	return view('ingresos.editar',compact(['ingreso','personas']) );
 	}
 
 	public function actualizar(Request $request){
@@ -56,7 +55,7 @@ class IngresosController extends Controller
 	public function lista_detalle($id)
 	{
 		$ingreso = Ingreso::lista()->where('ingreso.id',$id)->first();
-		$detalles = IngresoDetalle::lista()->get();
+		$detalles = IngresoDetalle::lista()->where('ingreso_detalle.ingreso_id',$id)->get();
 		$productos = Producto::all();
     	return view('ingresos.detalle.lista',compact(['ingreso','productos','detalles']));
 	}
