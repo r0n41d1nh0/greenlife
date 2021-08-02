@@ -40,7 +40,8 @@ class IngresosController extends Controller
 	{
 		$ingreso = Ingreso::find($id);
 		$personas = Persona::where('tipo','P')->get();
-    	return view('ingresos.editar',compact(['ingreso','personas']) );
+		$proveedor = Persona::find($ingreso->persona_id);
+    	return view('ingresos.editar',compact(['ingreso','personas','proveedor']) );
 	}
 
 	public function actualizar(Request $request){

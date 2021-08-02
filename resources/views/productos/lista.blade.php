@@ -17,7 +17,7 @@
       <h2>Productos</h2>
       <br>
       <div class="table-responsive">
-        <table class="table table-striped table-bordered table-condensed table-sm" id="dataTable" width="100%" cellspacing="0">
+        <table class="table table-striped table-bordered table-condensed table-sm border-primary" id="dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
               <th>Id</th>

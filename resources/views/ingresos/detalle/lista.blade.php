@@ -45,7 +45,7 @@
       </form>
       <br>
       <div class="table-responsive">
-        <table class="table table-striped table-bordered table-condensed table-sm" >
+        <table class="table table-striped table-bordered table-condensed table-sm border-primary" >
           <thead>
             <tr>
               <th>Producto</th>

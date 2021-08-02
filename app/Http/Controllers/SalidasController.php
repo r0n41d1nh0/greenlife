@@ -82,6 +82,7 @@ class SalidasController extends Controller
 			'producto_id' => $request->producto_id,
 			'cantidad' => $request->cantidad,
 			'costo' => $request->costo,
+			'sustrato' => $request->sustrato,
 			'precio_venta' => $request->precio_venta,
 			'ingreso_detalle_id' => $request->ingreso_detalle_id
 		]);

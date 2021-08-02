@@ -33,18 +33,20 @@
       </form>
       <br>
       <div class="table-responsive">
-        <table class="table table-striped table-bordered table-condensed table-sm" >
+        <table class="table table-striped table-bordered table-condensed table-sm border-primary" >
           <thead>
             <tr>
-              <th>Proveedor</th>
-              <th>Fecha Ingreso</th>
+              <th>Prov.</th>
+              <th>Fec. Ingreso</th>
               <th>Producto</th>
-              <th>Dimension</th>
-              <th>Cant. ingresada</th>
-              <th>Costo</th>
-              <th>Cant. despachada</th>
-              <th>Cant.</th>
-              <th>P. Venta</th>
+              <th>Dimensión</th>
+              <th class="col-1">Cant. comprada</th>
+              <th class="col-1">Costo compra</th>
+              <th class="col-1">Cant. separada</th>
+              <th class="col-1">Cant. disponible</th>
+              <th class="col-1">Cant.</th>
+              <th class="col-1">Sustrato</th>
+              <th class="col-1">P. Venta</th>
               <th></th>
             </tr>
           </thead>
@@ -58,7 +60,9 @@
                 <td>{{ $item->cantidad_ingresada }}</td>
                 <td>{{ $item->costo }}</td>
                 <td>{{ $item->cantidad_salida }}</td>
-                <td><input type="number" name="cantidad" class="form-control form-control-sm" value="1" autocomplete="off" form="{{ $item->id }}" required></td>
+                <td>{{ $item->cantidad_ingresada - $item->cantidad_salida }}</td>
+                <td><input type="number" name="cantidad" class="form-control form-control-sm" value="1" min="1" max="{{ $item->cantidad_ingresada - $item->cantidad_salida }}" autocomplete="off" form="{{ $item->id }}" required></td>
+                <td><input type="number" name="sustrato" class="form-control form-control-sm" value="0" autocomplete="off" form="{{ $item->id }}" required></td>
                 <td><input type="number" name="precio_venta" class="form-control form-control-sm" value="{{ $item->precio_venta }}" autocomplete="off" form="{{ $item->id }}" required></td>
                 <td>
                   <form action="{{ route('salidas.detalle.registrar') }}" method="post" id="{{ $item->id }}" onsubmit="return confirm('¿Está seguro de realizar esta acción?');">
@@ -78,13 +82,14 @@
       @endif
       <br>
       <div class="table-responsive">
-        <table class="table table-striped table-bordered table-condensed table-sm" >
+        <table class="table table-striped table-bordered table-condensed table-sm border-primary" >
           <thead>
             <tr>
               <th>Producto</th>
               <th>Cantidad</th>
               <th>Costo</th>
-              <th>Precio de Venta</th>
+              <th>Sustrato</th>
+              <th>P. Venta</th>
               <th>Ganancia</th>
               <th></th>
             </tr>
@@ -93,11 +98,12 @@
             @foreach($detalles as $item)
             <tr>
                 <td>{{ $item->descripcion }}</td>
-                <td>{{ $item->cantidad }}</td>
-                <td>{{ $item->costo }}</td>
-                <td>{{ $item->precio_venta }}</td>
-                <td>{{ $item->precio_venta*$item->cantidad - $item->costo*$item->cantidad}}</td>
-                <td>
+                <td class="col-1">{{ $item->cantidad }}</td>
+                <td class="col-1">{{ $item->costo }}</td>
+                <td class="col-1">{{ $item->sustrato }}</td>
+                <td class="col-1">{{ $item->precio_venta }}</td>
+                <td class="col-1">{{ $item->precio_venta*$item->cantidad - $item->costo*$item->cantidad + $item->sustrato }}</td>
+                <td class="col-1">
                   @if($salida->confirmado != 1)
                   <form action="{{ route('salidas.detalle.borrar') }}" method="post" onsubmit="return confirm('¿Está seguro de realizar esta acción?');">
                     @csrf
@@ -110,6 +116,17 @@
             </tr>
             @endforeach
           </tbody>
+          <tfoot>
+            <tr>
+              <th>Total</th>
+              <td>{{ $detalles->sum('cantidad') }}</td>
+              <td>{{ $detalles->sum('costo') }}</td>
+              <td>{{ $detalles->sum('sustrato') }}</td>
+              <td>{{ $detalles->sum('precio_venta') }}</td>
+              <td>{{ $salida->ganancia }}</td>
+              <th></th>
+            </tr>
+          </tfoot>
         </table>
       </div>
     </div>

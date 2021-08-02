@@ -9,7 +9,7 @@ class SalidaDetalle extends Model
     protected $table='salida_detalle';
     public $timestamps=false;
 
-    protected $fillable = ['salida_id','producto_id','cantidad','costo','precio_venta','ingreso_detalle_id'];
+    protected $fillable = ['salida_id','producto_id','cantidad','costo','sustrato','precio_venta','ingreso_detalle_id'];
 
     public static function lista(){
         return SalidaDetalle::join('producto','salida_detalle.producto_id','=','producto.id')
@@ -19,6 +19,7 @@ class SalidaDetalle extends Model
                             'salida_detalle.producto_id',
                             'salida_detalle.cantidad',
                             'salida_detalle.costo',
+                            'salida_detalle.sustrato',
                             'salida_detalle.precio_venta',
                             'salida_detalle.ingreso_detalle_id',
                             'producto.descripcion',
