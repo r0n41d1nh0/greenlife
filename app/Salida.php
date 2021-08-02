@@ -12,7 +12,7 @@ class Salida extends Model
     protected $fillable = ['persona_id','costo_compra','costo_delivery','precio_delivery','fecha','fecha_pago','observacion','confirmado'];
 
     public static function lista(){
-        return Salida::join('vw_salida_ganancia','salida.id','=','vw_salida_ganancia.id')
+        return Salida::leftjoin('vw_salida_ganancia','salida.id','=','vw_salida_ganancia.id')
                         ->leftjoin('persona','salida.persona_id','=','persona.id')
                         ->select(
                             'salida.id',
