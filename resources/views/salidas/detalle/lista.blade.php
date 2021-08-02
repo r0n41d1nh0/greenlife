@@ -141,6 +141,7 @@
               <th>{{ $salida->venta_total }}</th>
               <th>{{ $salida->ganancia }}</th>
               <th></th>
+              <th></th>
             </tr>
           </tfoot>
         </table>
