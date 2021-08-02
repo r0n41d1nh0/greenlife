@@ -29,7 +29,7 @@
           </select>
         </div>
         <div class="col-md-2">
-          <label>Costo de compra</label>
+          <label>Extra</label>
           <input type="number" name="costo_compra" class="form-control form-control-sm" value="{{ $salida->costo_compra }}">
         </div>
         <div class="col-md-2">

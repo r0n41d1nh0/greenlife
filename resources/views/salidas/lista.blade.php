@@ -21,11 +21,11 @@
           <thead>
             <tr>
               <th>Cliente</th>
-              <th>Costo compra</th>
-              <th>Costo delivery</th>
-              <th>Precio delivery</th>
-              <th>Ganacia x Prod.</th>
-              <th>Ganacia Total</th>
+              <th class="col-1">Extra</th>
+              <th class="col-1">Costo delivery</th>
+              <th class="col-1">Precio delivery</th>
+              <th class="col-1">Ganacia x Prod.</th>
+              <th class="col-1">Ganacia Total</th>
               <th>Fecha</th>
               <th>Fecha de Pago</th>
               <th>Observación</th>

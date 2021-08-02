@@ -86,11 +86,14 @@
           <thead>
             <tr>
               <th>Producto</th>
-              <th>Cantidad</th>
-              <th>Costo</th>
-              <th>Sustrato</th>
-              <th>P. Venta</th>
-              <th>Ganancia</th>
+              <th class="col-1">Cantidad</th>
+              <th class="col-1">Costo</th>
+              <th class="col-1">Costo Total</th>
+              <th class="col-1">Sustrato</th>
+              <th class="col-1">Sustrato Total</th>
+              <th class="col-1">P. Venta</th>
+              <th class="col-1">Venta Total</th>
+              <th class="col-1">Ganancia</th>
               <th></th>
             </tr>
           </thead>
@@ -98,11 +101,14 @@
             @foreach($detalles as $item)
             <tr>
                 <td>{{ $item->descripcion }}</td>
-                <td class="col-1">{{ $item->cantidad }}</td>
+                <td >{{ $item->cantidad }}</td>
                 <td class="col-1">{{ $item->costo }}</td>
+                <td class="col-1">{{ $item->costo*$item->cantidad }}</td>
                 <td class="col-1">{{ $item->sustrato }}</td>
+                <td class="col-1">{{ $item->sustrato*$item->cantidad }}</td>
                 <td class="col-1">{{ $item->precio_venta }}</td>
-                <td class="col-1">{{ $item->precio_venta*$item->cantidad - $item->costo*$item->cantidad + $item->sustrato }}</td>
+                <td class="col-1">{{ $item->precio_venta*$item->cantidad }}</td>
+                <td class="col-1">{{ $item->precio_venta*$item->cantidad - $item->costo*$item->cantidad + $item->sustrato*$item->cantidad }}</td>
                 <td class="col-1">
                   @if($salida->confirmado != 1)
                   <form action="{{ route('salidas.detalle.borrar') }}" method="post" onsubmit="return confirm('¿Está seguro de realizar esta acción?');">
@@ -121,9 +127,12 @@
               <th>Total</th>
               <td>{{ $detalles->sum('cantidad') }}</td>
               <td>{{ $detalles->sum('costo') }}</td>
+              <th>{{ $salida->costo_total }}</th>
               <td>{{ $detalles->sum('sustrato') }}</td>
+              <th>{{ $salida->sustrato_total }}</th>
               <td>{{ $detalles->sum('precio_venta') }}</td>
-              <td>{{ $salida->ganancia }}</td>
+              <th>{{ $salida->venta_total }}</th>
+              <th>{{ $salida->ganancia }}</th>
               <th></th>
             </tr>
           </tfoot>

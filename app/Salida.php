@@ -25,6 +25,9 @@ class Salida extends Model
                             'salida.observacion',
                             'salida.confirmado',
                             'persona.nombres',
+                            'vw_salida_ganancia.costo_total',
+                            'vw_salida_ganancia.venta_total',
+                            'vw_salida_ganancia.sustrato_total',
                             'vw_salida_ganancia.ganancia'
                             )
                         ->orderBy('salida.id','desc');
