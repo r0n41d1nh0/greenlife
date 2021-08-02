@@ -22,6 +22,17 @@
 		padding: 0.25rem !important;
 		vertical-align: middle !important;
 		}
+
+		.breadcrumb {
+		box-shadow: 1px 1px #d5d4d4;
+		background: #eeeded;
+		border: 1px solid #eeeded;
+		border-radius: 5px;
+		padding: 0 5px 0 10px !important;
+		font-size: 16px;
+		line-height:2em;
+		}
+
   </style>
   </head>
 	<body>
@@ -30,7 +41,7 @@
 	  <div class="container">
 		<header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
 		  <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-			<span class="fs-4">VIDA VERDE</span>
+			<span class="fs-4 text-success">VIDA VERDE</span>
 		  </a>
 
 		  <ul class="nav nav-pills">

@@ -15,18 +15,18 @@
         @csrf
         <div class="col-md-6">
           <label>Descripción</label>
-          <input type="text" name="descripcion" class="form-control form-control-sm" autocomplete="off" required>
+          <input type="text" name="descripcion" class="form-control form-control-sm border-primary border-3" autocomplete="off" required>
         </div>
         <div class="col-md-2">
           <label>Medida</label>
-          <select name="medida" class="form-control form-control-sm"  required>
+          <select name="medida" class="form-control form-control-sm border-primary border-3"  required>
             <option value="Unidad">Unidad</option>
             <option value="Gramos">Gramos</option>
           </select>
         </div>
         <div class="col-md-2">
           <label>Precio para venta</label>
-          <input type="number" name="precio" class="form-control form-control-sm" required>
+          <input type="number" name="precio" class="form-control form-control-sm border-primary border-3" required>
         </div>
         <br>
         <input type="submit" class="btn btn-primary btn-sm btn-confirm" value="Agregar">

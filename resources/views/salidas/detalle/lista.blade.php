@@ -1,5 +1,6 @@
 @extends('capas.aplicacion')
 @section('content')
+
   <ol class="breadcrumb">
     <li class="breadcrumb-item">
       <a href="{{ route('salidas.lista') }}">Salidas</a>
@@ -7,6 +8,7 @@
     <li class="breadcrumb-item">{{ $salida->id }}_{{ $salida->fecha }}_{!! is_null($salida->persona_id) ?  $salida->observacion : $salida->nombres !!}</li>
     <li class="breadcrumb-item"><a href="{{ route('salidas.detalle.lista', $salida->id ) }}">Detalle</a></li>
   </ol>
+
   <hr>
   @if(Session::has('success'))
     <div class="alert alert-success">
@@ -21,7 +23,7 @@
         
         <div class="col-md-4">
           <label>Producto</label>
-          <select name="producto" class="form-control form-control-sm selectpicker" required>
+          <select name="producto" class="form-control form-control-sm border border-primary border-3" required>
             <option value="">Seleccione</option>  
             @foreach($productos as $producto)
             <option value="{{ $producto->producto_id }}">{{ $producto->descripcion }}</option>
@@ -31,6 +33,8 @@
         <br>
         <input type="submit" class="btn btn-primary btn-sm btn-confirm" value="Buscar">
       </form>
+      @empty($ingreso_detalle)
+      @else
       <br>
       <div class="table-responsive">
         <table class="table table-striped table-bordered table-condensed table-sm border-primary" >
@@ -61,9 +65,9 @@
                 <td>{{ $item->costo }}</td>
                 <td>{{ $item->cantidad_salida }}</td>
                 <td>{{ $item->cantidad_ingresada - $item->cantidad_salida }}</td>
-                <td><input type="number" name="cantidad" class="form-control form-control-sm" value="1" min="1" max="{{ $item->cantidad_ingresada - $item->cantidad_salida }}" autocomplete="off" form="{{ $item->id }}" required></td>
-                <td><input type="number" name="sustrato" class="form-control form-control-sm" value="0" autocomplete="off" form="{{ $item->id }}" required></td>
-                <td><input type="number" name="precio_venta" class="form-control form-control-sm" value="{{ $item->precio_venta }}" autocomplete="off" form="{{ $item->id }}" required></td>
+                <td><input type="number" name="cantidad" class="form-control form-control-sm border border-primary border-3" value="1" min="1" max="{{ $item->cantidad_ingresada - $item->cantidad_salida }}" autocomplete="off" form="{{ $item->id }}" required></td>
+                <td><input type="number" name="sustrato" class="form-control form-control-sm border border-primary border-3" value="0" autocomplete="off" form="{{ $item->id }}" required></td>
+                <td><input type="number" name="precio_venta" class="form-control form-control-sm border border-primary border-3" value="{{ $item->precio_venta }}" autocomplete="off" form="{{ $item->id }}" required></td>
                 <td>
                   <form action="{{ route('salidas.detalle.registrar') }}" method="post" id="{{ $item->id }}" onsubmit="return confirm('¿Está seguro de realizar esta acción?');">
                     @csrf
@@ -71,7 +75,7 @@
                     <input type="hidden" name="salida_id" value="{{ $salida->id }}">
                     <input type="hidden" name="producto_id" value="{{ $item->producto_id }}">
                     <input type="hidden" name="costo" value="{{ $item->costo }}">
-                    <button class="btn btn-outline-primary btn-sm btn-confirm">Agregar a Pedido</button>
+                    <button class="btn btn-primary btn-sm btn-confirm">Agregar a Pedido</button>
                   </form>
                 </td>
             </tr>
@@ -79,6 +83,7 @@
           </tbody>
         </table>
       </div>
+      @endempty
       @endif
       <br>
       <div class="table-responsive">
@@ -94,28 +99,30 @@
               <th class="col-1">P. Venta</th>
               <th class="col-1">Venta Total</th>
               <th class="col-1">Ganancia</th>
-              <th></th>
+              <th class="col-1"></th>
+              <th class="col-1"></th>
             </tr>
           </thead>
           <tbody>
             @foreach($detalles as $item)
             <tr>
                 <td>{{ $item->descripcion }}</td>
-                <td >{{ $item->cantidad }}</td>
-                <td class="col-1">{{ $item->costo }}</td>
-                <td class="col-1">{{ $item->costo*$item->cantidad }}</td>
-                <td class="col-1">{{ $item->sustrato }}</td>
-                <td class="col-1">{{ $item->sustrato*$item->cantidad }}</td>
-                <td class="col-1">{{ $item->precio_venta }}</td>
-                <td class="col-1">{{ $item->precio_venta*$item->cantidad }}</td>
-                <td class="col-1">{{ $item->precio_venta*$item->cantidad - $item->costo*$item->cantidad + $item->sustrato*$item->cantidad }}</td>
-                <td class="col-1">
+                <td>{{ $item->cantidad }}</td>
+                <td>{{ $item->costo }}</td>
+                <td>{{ $item->costo*$item->cantidad }}</td>
+                <td>{{ $item->sustrato }}</td>
+                <td>{{ $item->sustrato*$item->cantidad }}</td>
+                <td>{{ $item->precio_venta }}</td>
+                <td>{{ $item->precio_venta*$item->cantidad }}</td>
+                <td>{{ $item->precio_venta*$item->cantidad - $item->costo*$item->cantidad + $item->sustrato*$item->cantidad }}</td>
+                <td></td>
+                <td>
                   @if($salida->confirmado != 1)
                   <form action="{{ route('salidas.detalle.borrar') }}" method="post" onsubmit="return confirm('¿Está seguro de realizar esta acción?');">
                     @csrf
                     <input type="hidden" name="id" value="{{ $item->id }}">
                     <input type="hidden" name="salida_id" value="{{ $salida->id }}">
-                    <button class="btn btn-outline-primary btn-sm btn-confirm">Borrar</button>
+                    <button class="btn btn-primary btn-sm btn-confirm">Borrar</button>
                   </form>
                   @endif
                 </td>

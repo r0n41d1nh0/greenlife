@@ -21,11 +21,11 @@
         @csrf
         <div class="col-md-2">
           <label>Fecha</label>
-          <input type="text" name="fecha" class="form-control form-control-sm" autocomplete="off" value="{{ $ingreso->fecha }}" required>
+          <input type="text" name="fecha" class="form-control form-control-sm border-primary border-3" autocomplete="off" value="{{ $ingreso->fecha }}" required>
         </div>
         <div class="col-md-4">
           <label>Proveedor</label>
-          <select name="persona_id" class="form-control form-control-sm selectpicker" required>
+          <select name="persona_id" class="form-control form-control-sm border-primary border-3" required>
             <option value="">Seleccione</option>  
             @foreach($personas as $persona)
             <option value="{{ $persona->id }}" @if($persona->id==$ingreso->persona_id) selected @endif >{{ $persona->nombres }}</option>

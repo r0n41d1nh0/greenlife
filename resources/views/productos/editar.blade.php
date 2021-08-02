@@ -21,11 +21,11 @@
         @csrf
         <div class="col-md-6">
           <label>Descripción</label>
-          <input type="text" name="descripcion" class="form-control form-control-sm" autocomplete="off" value="{{ $producto->descripcion }}" required>
+          <input type="text" name="descripcion" class="form-control form-control-sm border-primary border-3" autocomplete="off" value="{{ $producto->descripcion }}" required>
         </div>
         <div class="col-md-2">
           <label>Medida</label>
-          <select name="medida" class="form-control form-control-sm"  required>
+          <select name="medida" class="form-control form-control-sm border-primary border-3"  required>
             
             <option value="Unidad" @if($producto->medida=="Unidad") selected @endif >Unidad</option>
             <option value="Gramos" @if($producto->medida=="Gramos") selected @endif >Gramos</option>
@@ -33,7 +33,7 @@
         </div>
         <div class="col-md-2">
           <label>Precio</label>
-          <input type="number" name="precio" class="form-control form-control-sm" value="{{ $producto->precio }}" required>
+          <input type="number" name="precio" class="form-control form-control-sm border-primary border-3" value="{{ $producto->precio }}" required>
         </div>
         <br>
         <input type="hidden" name="id" value="{{ $producto->id }}" >

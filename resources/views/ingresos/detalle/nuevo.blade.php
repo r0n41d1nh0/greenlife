@@ -15,11 +15,11 @@
         @csrf
         <div class="col-md-2">
           <label>Fecha</label>
-          <input type="text" name="fecha" class="form-control form-control-sm" autocomplete="off" required>
+          <input type="text" name="fecha" class="form-control form-control-sm border-primary border-3" autocomplete="off" required>
         </div>
         <div class="col-md-4">
           <label>Proveedor</label>
-          <select name="persona_id" class="form-control form-control-sm selectpicker" required>
+          <select name="persona_id" class="form-control form-control-sm border-primary border-3" required>
             <option value="">Seleccione</option>  
             @foreach($personas as $persona)
             <option value="{{ $persona->id }}">{{ $persona->nombres }}</option>
@@ -27,7 +27,7 @@
           </select>
         </div>
         <br>
-        <input type="submit" class="btn btn-primary btn-sm btn-confirm" value="Agregar">
+        <input type="submit" class="btn btn-primary btn-sm" value="Agregar">
       </form>
     </div>
   </div>

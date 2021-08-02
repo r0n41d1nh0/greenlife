@@ -21,14 +21,14 @@
           <thead>
             <tr>
               <th>Cliente</th>
-              <th class="col-1">Extra</th>
-              <th class="col-1">Costo delivery</th>
-              <th class="col-1">Precio delivery</th>
-              <th class="col-1">Ganacia x Prod.</th>
-              <th class="col-1">Ganacia Total</th>
               <th>Fecha</th>
               <th>Fecha de Pago</th>
               <th>Observación</th>
+              <th class="col-1">Extra</th>
+              <th class="col-1">Costo delivery</th>
+              <th class="col-1">Precio delivery</th>
+              <th class="col-1">Ganacia por Producto</th>
+              <th class="col-1">Ganacia Total</th>
               <th></th>
               <th></th>
             </tr>
@@ -37,27 +37,37 @@
             @foreach($salidas as $item)
             <tr>
                 <td>{{ $item->nombres }}</td>
-                <td>{{ $item->costo_compra }}</td>
-                <td>{{ $item->costo_delivery }}</td>
-                <td>{{ $item->precio_delivery }}</td>
-                <td>{{ $item->ganancia }}</td>
-                <td>{{ $item->ganancia + $item->precio_delivery + $item->costo_compra - $item->costo_delivery }}</td>
-                <td>{{ $item->fecha }}</td>
-                <td>{{ $item->fecha_pago }}</td>
+                
+                <td class="col-1">{{ $item->fecha }}</td>
+                <td class="col-1">{{ $item->fecha_pago }}</td>
                 <td>{{ $item->observacion }}</td>
+                <td class="col-1">{{ $item->costo_compra }}</td>
+                <td class="col-1">{{ $item->costo_delivery }}</td>
+                <td class="col-1">{{ $item->precio_delivery }}</td>
+                <td class="col-1">{{ $item->ganancia }}</td>
+                <td class="col-1">{{ $item->ganancia + $item->precio_delivery + $item->costo_compra - $item->costo_delivery }}</td>
                 <td><a href="{{ route('salidas.editar', $item->id )}}" class="">Editar</a> / <a href="{{ route('salidas.detalle.lista', $item->id ) }}" class="">Productos</a></td>
                 <td>
                   @if($item->confirmado != 1)
                   <form action="{{ route('salidas.confirmar') }}" method="post" onsubmit="return confirm('¿Está seguro de realizar esta acción?');">
                     @csrf
                     <input type="hidden" name="salida_id" value="{{ $item->id }}">
-                    <button class="btn btn-outline-success btn-sm">Confirmar</button>
+                    <button class="btn btn-success btn-sm">Confirmar</button>
                   </form>
                   @endif
                 </td>
             </tr>
             @endforeach
           </tbody>
+          <tfoot>
+            <th colspan="4">Total</th>
+            <td>{{ $salidas->sum('costo_compra') }}</td>
+            <td>{{ $salidas->sum('costo_delivery') }}</td>
+            <td>{{ $salidas->sum('precio_delivery') }}</td>
+            <td>{{ $salidas->sum('ganancia') }}</td>
+            <td>{{ $salidas->sum('ganancia') + $salidas->sum('precio_delivery') + $salidas->sum('costo_compra') - $salidas->sum('costo_delivery') }}</td>
+            <td colspan="2"></td>
+          </tfoot>
         </table>
       </div>
     </div>

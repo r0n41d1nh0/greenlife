@@ -15,7 +15,7 @@
         @csrf
         <div class="col-md-4">
           <label>Cliente</label>
-          <select name="persona_id" class="form-control form-control-sm selectpicker">
+          <select name="persona_id" class="form-control form-control-sm border-primary border-3">
             <option value=''>Seleccione</option>  
             @foreach($personas as $persona)
             <option value="{{ $persona->id }}">{{ $persona->nombres }}</option>
@@ -24,27 +24,27 @@
         </div>
         <div class="col-md-2">
           <label>Extra</label>
-          <input type="number" name="costo_compra" class="form-control form-control-sm">
+          <input type="number" name="costo_compra" class="form-control form-control-sm border-primary border-3">
         </div>
         <div class="col-md-2">
           <label>Costo delivery</label>
-          <input type="number" name="costo_delivery" class="form-control form-control-sm">
+          <input type="number" name="costo_delivery" class="form-control form-control-sm border-primary border-3">
         </div>
         <div class="col-md-2">
           <label>Precio delivery</label>
-          <input type="number" name="precio_delivery" class="form-control form-control-sm">
+          <input type="number" name="precio_delivery" class="form-control form-control-sm border-primary border-3">
         </div>
         <div class="col-md-2">
           <label>Fecha</label>
-          <input type="text" name="fecha" class="form-control form-control-sm" autocomplete="off">
+          <input type="text" name="fecha" class="form-control form-control-sm border-primary border-3" autocomplete="off">
         </div>
         <div class="col-md-2">
           <label>Fecha de Pago</label>
-          <input type="text" name="fecha_pago" class="form-control form-control-sm" autocomplete="off">
+          <input type="text" name="fecha_pago" class="form-control form-control-sm border-primary border-3" autocomplete="off">
         </div>
         <div class="col-md-6">
           <label>Observación</label>
-          <input type="text" name="observacion" class="form-control form-control-sm" autocomplete="off">
+          <input type="text" name="observacion" class="form-control form-control-sm border-primary border-3" autocomplete="off">
         </div>
         <br>
         <input type="submit" class="btn btn-primary btn-sm btn-confirm" value="Agregar">

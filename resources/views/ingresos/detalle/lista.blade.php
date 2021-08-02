@@ -20,7 +20,7 @@
         @csrf
         <div class="col-md-4">
           <label>Producto</label>
-          <select name="producto_id" class="form-control form-control-sm selectpicker" required>
+          <select name="producto_id" class="form-control form-control-sm border-primary border-3" required>
             <option value="">Seleccione</option>  
             @foreach($productos as $producto)
             <option value="{{ $producto->id }}">{{ $producto->descripcion }}</option>
@@ -29,15 +29,15 @@
         </div>
         <div class="col-md-2">
           <label>Cantidad</label>
-          <input type="number" name="cantidad" class="form-control form-control-sm" autocomplete="off" required>
+          <input type="number" name="cantidad" class="form-control form-control-sm border-primary border-3" autocomplete="off" required>
         </div>
         <div class="col-md-2">
           <label>Precio</label>
-          <input type="number" name="precio" class="form-control form-control-sm" autocomplete="off" required>
+          <input type="number" name="precio" class="form-control form-control-sm border-primary border-3" autocomplete="off" required>
         </div>
         <div class="col-md-2">
           <label>Dimensión</label>
-          <input type="text" name="dimension" class="form-control form-control-sm" autocomplete="off" required>
+          <input type="text" name="dimension" class="form-control form-control-sm border-primary border-3" autocomplete="off" required>
         </div>
         <br>
         <input type="hidden" name="ingreso_id" value="{{ $ingreso->id }}">
@@ -67,7 +67,7 @@
                     @csrf
                     <input type="hidden" name="id" value="{{ $item->id }}">
                     <input type="hidden" name="ingreso_id" value="{{ $ingreso->id }}">
-                    <button class="btn btn-outline-primary btn-sm btn-confirm">Borrar</button>
+                    <button class="btn btn-primary btn-sm btn-confirm">Borrar</button>
                   </form>
                 </td>
             </tr>
