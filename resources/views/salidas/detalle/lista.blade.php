@@ -96,7 +96,7 @@
                 <td>{{ $item->cantidad }}</td>
                 <td>{{ $item->costo }}</td>
                 <td>{{ $item->precio_venta }}</td>
-                <td>{{ $item->precio_venta - $item->costo}}</td>
+                <td>{{ $item->precio_venta*$item->cantidad - $item->costo*$item->cantidad}}</td>
                 <td>
                   @if($salida->confirmado != 1)
                   <form action="{{ route('salidas.detalle.borrar') }}" method="post" onsubmit="return confirm('¿Está seguro de realizar esta acción?');">
