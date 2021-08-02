@@ -33,6 +33,7 @@ class SalidasController extends Controller
 			'persona_id' => $request->persona_id,
             'costo_compra' => $request->costo_compra,
             'costo_delivery' => $request->costo_delivery,
+			'precio_delivery' => $request->precio_delivery,
 			'fecha' => $request->fecha,
             'fecha_pago' => $request->fecha_pago,
             'observacion' => $request->observacion
