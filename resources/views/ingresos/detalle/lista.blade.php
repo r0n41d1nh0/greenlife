@@ -2,7 +2,7 @@
 @section('content')
   <ol class="breadcrumb">
     <li class="breadcrumb-item">
-      <a href="{{ route('ingresos.lista') }}">Ingresos</a>
+      <a href="{{ route('ingresos.lista') }}">Compras</a>
     </li>
     <li class="breadcrumb-item">{{ $ingreso->id }}_{{ $ingreso->fecha }}_{{ $ingreso->nombres}}</li>
     <li class="breadcrumb-item"><a href="{{ route('ingresos.detalle.lista', $ingreso->id ) }}">Detalle</a></li>
@@ -15,7 +15,7 @@
   @endif
   <div class="row">
     <div class="col-12">
-      <h2>Detalle de ingreso</h2>
+      <h2>Detalle de compra</h2>
       <form action="{{ route('ingresos.detalle.registrar') }}" method="post">
         @csrf
         <div class="col-md-4">

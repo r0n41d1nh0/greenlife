@@ -2,14 +2,14 @@
 @section('content')
   <ol class="breadcrumb">
     <li class="breadcrumb-item">
-      <a href="{{ route('ingresos.lista') }}">Ingresos</a>
+      <a href="{{ route('ingresos.lista') }}">Compras</a>
     </li>
     <li class="breadcrumb-item"><a href="{{ route('ingresos.lista') }}">Nuevo</a></li>
   </ol>
   <hr>
   <div class="row">
     <div class="col-12">
-      <h2>Nuevo ingreso</h2>
+      <h2>Nueva compra</h2>
       <br>
       <form action="{{ route('ingresos.registrar') }}" method="post">
         @csrf
