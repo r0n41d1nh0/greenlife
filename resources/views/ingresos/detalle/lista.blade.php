@@ -33,7 +33,7 @@
         </div>
         <div class="col-md-2">
           <label>Precio</label>
-          <input type="number" name="precio" class="form-control form-control-sm border-primary border-3" autocomplete="off" required>
+          <input type="number" name="precio" step="any" class="form-control form-control-sm border-primary border-3" autocomplete="off" required>
         </div>
         <div class="col-md-2">
           <label>Dimensión</label>
