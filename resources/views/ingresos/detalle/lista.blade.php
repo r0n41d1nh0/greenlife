@@ -51,6 +51,7 @@
               <th class="col-1">Cantidad</th>
               <th class="col-1">Precio</th>
               <th>Dimensión</th>
+              <th class="col-1">Total</th>
               <th class="col-1"></th>
               <th class="col-1"></th>
             </tr>
@@ -62,6 +63,7 @@
                 <td>{{ $item->cantidad }}</td>
                 <td>{{ $item->precio }}</td>
                 <td>{{ $item->dimension }}</td>
+                <td>{{ $item->cantidad*$item->precio }}</td>
                 <td>
                   <form action="{{ route('ingresos.detalle.borrar') }}" method="post" onsubmit="return confirm('¿Está seguro de realizar esta acción?');">
                     @csrf
