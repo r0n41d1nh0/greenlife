@@ -43,6 +43,8 @@ Route::post('/ingresos/actualizar', 'App\Http\Controllers\IngresosController@act
 Route::get('/ingresos/{id}/detalle', 'App\Http\Controllers\IngresosController@lista_detalle')->name('ingresos.detalle.lista');
 Route::post('/ingresos/nuevo-detalle', 'App\Http\Controllers\IngresosController@registrar_detalle')->name('ingresos.detalle.registrar');
 Route::post('/ingresos/borrar-detalle', 'App\Http\Controllers\IngresosController@borrar_detalle')->name('ingresos.detalle.borrar');
+Route::get('/ingresos/editar-detalle/{id_detalle}', 'App\Http\Controllers\IngresosController@editar_detalle')->name('ingresos.detalle.editar');
+Route::post('/ingresos/actualizar-detalle', 'App\Http\Controllers\IngresosController@actualizar_detalle')->name('ingresos.detalle.actualizar');
 
 //Inventario
 Route::get('/inventario', 'App\Http\Controllers\InventarioController@lista')->name('inventario.lista');

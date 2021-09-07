@@ -4,8 +4,7 @@
     <li class="breadcrumb-item">
       <a href="{{ route('ingresos.lista') }}">Compras</a>
     </li>
-    <li class="breadcrumb-item">{{ $ingreso->id }}_{{ $ingreso->fecha }}_{{ $ingreso->nombres}}</li>
-    <li class="breadcrumb-item"><a href="{{ route('ingresos.detalle.lista', $ingreso->id ) }}">Detalle</a></li>
+    <li class="breadcrumb-item"><a href="{{ route('ingresos.detalle.lista', $ingreso->id ) }}">{{ $ingreso->id }}_{{ $ingreso->fecha }}_{{ $ingreso->nombres}}</a></li>
   </ol>
   <hr>
   @if(Session::has('success'))
@@ -49,10 +48,11 @@
           <thead>
             <tr>
               <th>Producto</th>
-              <th>Cantidad</th>
-              <th>Precio</th>
+              <th class="col-1">Cantidad</th>
+              <th class="col-1">Precio</th>
               <th>Dimensión</th>
-              <th></th>
+              <th class="col-1"></th>
+              <th class="col-1"></th>
             </tr>
           </thead>
           <tbody>
@@ -70,6 +70,7 @@
                     <button class="btn btn-primary btn-sm btn-confirm">Borrar</button>
                   </form>
                 </td>
+                <td><a href="{{ route('ingresos.detalle.editar', [ $item->id ] )}}" class="btn btn-primary btn-sm btn-confirm">Editar</a> </td>
             </tr>
             @endforeach
           </tbody>
