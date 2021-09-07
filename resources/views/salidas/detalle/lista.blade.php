@@ -114,7 +114,7 @@
                 <td>{{ $item->sustrato*$item->cantidad }}</td>
                 <td>{{ $item->precio_venta }}</td>
                 <td>{{ $item->precio_venta*$item->cantidad }}</td>
-                <td>{{ $item->precio_venta*$item->cantidad - $item->costo*$item->cantidad + $item->sustrato*$item->cantidad }}</td>
+                <td>{{ $item->precio_venta*$item->cantidad - $item->costo*$item->cantidad - $item->sustrato*$item->cantidad }}</td>
                 <td></td>
                 <td>
                   @if($salida->confirmado != 1)
