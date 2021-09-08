@@ -2,10 +2,10 @@
 @section('content')
   <ol class="breadcrumb">
     <li class="breadcrumb-item">
-      <a href="{{ route('salidas.lista') }}">Salidas</a>
+      <a href="{{ route('salidas.lista') }}">Ventas</a>
     </li>
     <li class="breadcrumb-item">{{ $salida->id }}_{{ $salida->fecha }}_{!! is_null($cliente) ?  $salida->observacion : $cliente->nombres !!}</li>
-    <li class="breadcrumb-item"><a href="{{ route('salidas.nuevo') }}">Nuevo</a></li>
+    <li class="breadcrumb-item"><a href="{{ route('salidas.nuevo') }}">Nueva Venta</a></li>
   </ol>
   <hr>
   @if(Session::has('success'))
@@ -15,7 +15,7 @@
   @endif
   <div class="row">
     <div class="col-12">
-      <h2>Editar pedido</h2>
+      <h2>Editar Venta</h2>
       <br>
       <form action="{{ route('salidas.actualizar') }}" method="post">
         @csrf

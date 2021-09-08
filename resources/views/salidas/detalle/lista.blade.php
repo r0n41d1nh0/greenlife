@@ -3,7 +3,7 @@
 
   <ol class="breadcrumb">
     <li class="breadcrumb-item">
-      <a href="{{ route('salidas.lista') }}">Salidas</a>
+      <a href="{{ route('salidas.lista') }}">Ventas</a>
     </li>
     <li class="breadcrumb-item">{{ $salida->id }}_{{ $salida->fecha }}_{!! is_null($salida->persona_id) ?  $salida->observacion : $salida->nombres !!}</li>
     <li class="breadcrumb-item"><a href="{{ route('salidas.detalle.lista', $salida->id ) }}">Detalle</a></li>
@@ -17,7 +17,7 @@
   @endif
   <div class="row">
     <div class="col-12">
-      <h2>Detalle de pedido</h2>
+      <h2>Detalle de venta</h2>
       @if($salida->confirmado != 1)
       <form action="{{ route('salidas.detalle.lista', $salida->id ) }}" method="get">
         
@@ -66,8 +66,8 @@
                 <td>{{ $item->cantidad_salida }}</td>
                 <td>{{ $item->cantidad_ingresada - $item->cantidad_salida }}</td>
                 <td><input type="number" name="cantidad" class="form-control form-control-sm border border-primary border-3" value="1" min="1" max="{{ $item->cantidad_ingresada - $item->cantidad_salida }}" autocomplete="off" form="{{ $item->id }}" required></td>
-                <td><input type="number" name="sustrato" class="form-control form-control-sm border border-primary border-3" value="0" autocomplete="off" form="{{ $item->id }}" required></td>
-                <td><input type="number" name="precio_venta" class="form-control form-control-sm border border-primary border-3" value="{{ $item->precio_venta }}" autocomplete="off" form="{{ $item->id }}" required></td>
+                <td><input type="number" name="sustrato" class="form-control form-control-sm border border-primary border-3" step="any" value="0" autocomplete="off" form="{{ $item->id }}" required></td>
+                <td><input type="number" name="precio_venta" class="form-control form-control-sm border border-primary border-3" step="any" value="{{ $item->precio_venta }}" autocomplete="off" form="{{ $item->id }}" required></td>
                 <td>
                   <form action="{{ route('salidas.detalle.registrar') }}" method="post" id="{{ $item->id }}" onsubmit="return confirm('¿Está seguro de realizar esta acción?');">
                     @csrf

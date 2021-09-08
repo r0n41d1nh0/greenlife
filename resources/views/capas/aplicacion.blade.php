@@ -47,7 +47,7 @@
 		  <ul class="nav nav-pills">
 			<li class="nav-item"><a href="{{ route('inventario.lista') }}" class="nav-link">Inventario</a></li>
 			<li class="nav-item"><a href="{{ route('ingresos.lista') }}" class="nav-link">Compras</a></li>
-			<li class="nav-item"><a href="{{ route('salidas.lista') }}" class="nav-link">Salidas</a></li>
+			<li class="nav-item"><a href="{{ route('salidas.lista') }}" class="nav-link">Ventas</a></li>
 			<li class="nav-item"><a href="{{ route('productos.lista') }}" class="nav-link">Productos</a></li>
 			<li class="nav-item"><a href="{{ route('personas.lista') }}" class="nav-link">Personas</a></li>
 		  </ul>
