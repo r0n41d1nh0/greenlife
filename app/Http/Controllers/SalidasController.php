@@ -119,4 +119,17 @@ class SalidasController extends Controller
 		$salida->save();
 		return redirect()->route('salidas.lista')->withSuccess('Operación exitosa');
 	}
+
+	public function borrar(Request $request){
+
+		$salida=Salida::find($request->salida_id);
+		if($salida->confirmado==1){
+			return redirect()->route('salidas.lista')->withErrors('Salida fue confirmada');
+		}
+
+		SalidaDetalle::where('salida_id',$request->salida_id)->delete();
+
+		$salida->delete();
+		return redirect()->route('salidas.lista')->withSuccess('Operación exitosa');
+	}
 }

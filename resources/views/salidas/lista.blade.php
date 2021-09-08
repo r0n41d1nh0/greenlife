@@ -31,6 +31,7 @@
               <th class="col-1">Ganacia Total</th>
               <th></th>
               <th></th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
@@ -56,6 +57,15 @@
                   </form>
                   @endif
                 </td>
+                <td>
+                  @if($item->confirmado != 1)
+                  <form action="{{ route('salidas.borrar') }}" method="post" onsubmit="return confirm('¿Está seguro de realizar esta acción?');">
+                    @csrf
+                    <input type="hidden" name="salida_id" value="{{ $item->id }}">
+                    <button class="btn btn-primary btn-sm">Borrar</button>
+                  </form>
+                  @endif
+                </td>
             </tr>
             @endforeach
           </tbody>
@@ -66,7 +76,7 @@
             <td>{{ $salidas->sum('precio_delivery') }}</td>
             <td>{{ $salidas->sum('ganancia') }}</td>
             <td>{{ $salidas->sum('ganancia') + $salidas->sum('precio_delivery') + $salidas->sum('costo_compra') - $salidas->sum('costo_delivery') }}</td>
-            <td colspan="2"></td>
+            <td colspan="3"></td>
           </tfoot>
         </table>
       </div>
