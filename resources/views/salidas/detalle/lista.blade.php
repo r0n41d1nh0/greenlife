@@ -47,7 +47,7 @@
               <th class="col-1">Cant. comprada</th>
               <th class="col-1">Costo compra</th>
               <th class="col-1">Cant. separada</th>
-              <th class="col-1 table-active">Cant. disponible</th>
+              <th class="col-1 table-dark">Cant. disponible</th>
               <th class="col-1">Cant.</th>
               <th class="col-1">Sustrato</th>
               <th class="col-1">P. Venta</th>
@@ -64,7 +64,7 @@
                 <td>{{ $item->cantidad_ingresada }}</td>
                 <td>{{ $item->costo }}</td>
                 <td>{{ $item->cantidad_salida }}</td>
-                <td class="table-active">{{ $item->cantidad_ingresada - $item->cantidad_salida }}</td>
+                <td class="table-dark">{{ $item->cantidad_ingresada - $item->cantidad_salida }}</td>
                 <td><input type="number" name="cantidad" class="form-control form-control-sm border border-primary border-3" value="1" min="1" max="{{ $item->cantidad_ingresada - $item->cantidad_salida }}" autocomplete="off" form="{{ $item->id }}" required></td>
                 <td><input type="number" name="sustrato" class="form-control form-control-sm border border-primary border-3" step="any" value="0" autocomplete="off" form="{{ $item->id }}" required></td>
                 <td><input type="number" name="precio_venta" class="form-control form-control-sm border border-primary border-3" step="any" value="{{ $item->precio_venta }}" autocomplete="off" form="{{ $item->id }}" required></td>
