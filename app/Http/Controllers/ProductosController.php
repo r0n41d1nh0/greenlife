@@ -14,7 +14,7 @@ class ProductosController extends Controller
 
 	public function lista()
 	{
-		$productos = Producto::all();
+		$productos = Producto::orderBy('descripcion','asc')->get();
     	return view('productos.lista',compact(['productos']));
 	}
 

@@ -26,13 +26,12 @@
         <div class="col-md-2">
           <label>Medida</label>
           <select name="medida" class="form-control form-control-sm border-primary border-3"  required>
-            
             <option value="Unidad" @if($producto->medida=="Unidad") selected @endif >Unidad</option>
             <option value="Gramos" @if($producto->medida=="Gramos") selected @endif >Gramos</option>
           </select>
         </div>
         <div class="col-md-2">
-          <label>Precio</label>
+          <label>Precio para venta</label>
           <input type="number" name="precio" class="form-control form-control-sm border-primary border-3" value="{{ $producto->precio }}" required>
         </div>
         <br>

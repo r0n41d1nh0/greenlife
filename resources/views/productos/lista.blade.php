@@ -20,7 +20,6 @@
         <table class="table table-striped table-bordered table-condensed table-sm border-primary" id="dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
-              <th>Id</th>
               <th>Descripción</th>
               <th>Presentación</th>
               <th>Precio para venta</th>
@@ -30,7 +29,6 @@
           <tbody>
             @foreach($productos as $item)
             <tr>
-                <td>{{ $item->id }}</td>
                 <td>{{ $item->descripcion }}</td>
                 <td>{{ $item->medida }}</td>
                 <td>{{ $item->precio }}</td>
