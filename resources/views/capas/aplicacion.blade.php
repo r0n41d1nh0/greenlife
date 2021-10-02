@@ -34,6 +34,7 @@
 		}
 
   </style>
+  @yield('content.css')
   </head>
 	<body>
     
@@ -61,7 +62,7 @@
 
 
     <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-
+	@yield('content.js')
       
   </body>
 </html>

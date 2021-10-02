@@ -1,4 +1,7 @@
 @extends('capas.aplicacion')
+@section('content.css')
+<link href="{{ asset('vendor/bootstrap/css/bootstrap-datepicker3.min.css') }}" rel="stylesheet">
+@endsection
 @section('content')
   <ol class="breadcrumb">
     <li class="breadcrumb-item">
@@ -21,7 +24,7 @@
         @csrf
         <div class="col-md-4">
           <label>Cliente</label>
-          <select name="persona_id" class="form-control form-control-sm border-primary border-3" required>
+          <select name="persona_id" class="form-control form-control-sm border-primary border-3">
             <option value="">Seleccione</option>  
             @foreach($personas as $persona)
             <option value="{{ $persona->id }}" @if($persona->id==$salida->persona_id) selected @endif >{{ $persona->nombres }}</option>
@@ -42,11 +45,11 @@
         </div>
         <div class="col-md-2">
           <label>Fecha</label>
-          <input type="text" name="fecha" class="form-control form-control-sm border-primary border-3" autocomplete="off" value="{{ $salida->fecha }}">
+          <input type="text" name="fecha" class="form-control form-control-sm border-primary border-3 datepicker" autocomplete="off" value="{{ $salida->fecha }}">
         </div>
         <div class="col-md-2">
           <label>Fecha de Pago</label>
-          <input type="text" name="fecha_pago" class="form-control form-control-sm border-primary border-3" autocomplete="off" value="{{ $salida->fecha_pago }}">
+          <input type="text" name="fecha_pago" class="form-control form-control-sm border-primary border-3 datepicker" autocomplete="off" value="{{ $salida->fecha_pago }}">
         </div>
         <div class="col-md-6">
           <label>Observación</label>
@@ -59,4 +62,17 @@
     </div>
   </div>
   <br>
+@endsection
+@section('content.js')
+  <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ asset('vendor/bootstrap/js/bootstrap-datepicker.min.js') }}"></script>
+  <script src="{{ asset('vendor/bootstrap/js/bootstrap-datepicker.es.min.js') }}"></script>
+  <script>
+    $('.datepicker').datepicker({
+        format: "yyyy-mm-dd",
+        autoclose: true,
+        language: "es",
+        todayHighlight: true
+    });
+  </script>
 @endsection
