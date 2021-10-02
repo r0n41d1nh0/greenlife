@@ -45,6 +45,18 @@
           <label>Fecha de Pago</label>
           <input type="text" name="fecha_pago" class="form-control form-control-sm border-primary border-3 datepicker" autocomplete="off">
         </div>
+        <div class="col-md-2">
+          <label>Medio de Pago</label>
+          <select name="medio_pago" class="form-control form-control-sm border-primary border-3" >
+            <option value=""></option>
+            <option value="Efectivo">Efectivo</option>
+            <option value="Yape">Yape</option>
+            <option value="Plin">Plin</option>
+            <option value="BCP">BCP</option>
+            <option value="Scotiabank">Scotiabank</option>
+            <option value="BBVA">BBVA</option>
+          </select>
+        </div>
         <div class="col-md-6">
           <label>Observación</label>
           <input type="text" name="observacion" class="form-control form-control-sm border-primary border-3" autocomplete="off">

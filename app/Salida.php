@@ -9,7 +9,7 @@ class Salida extends Model
     protected $table='salida';
     public $timestamps=false;
 
-    protected $fillable = ['persona_id','costo_compra','costo_delivery','precio_delivery','fecha','fecha_pago','observacion','confirmado'];
+    protected $fillable = ['persona_id','costo_compra','costo_delivery','precio_delivery','fecha','fecha_pago','observacion','confirmado','medio_pago'];
 
     public static function lista(){
         return Salida::leftjoin('vw_salida_ganancia','salida.id','=','vw_salida_ganancia.id')
@@ -24,6 +24,7 @@ class Salida extends Model
                             'salida.fecha_pago',
                             'salida.observacion',
                             'salida.confirmado',
+                            'salida.medio_pago',
                             'persona.nombres',
                             'vw_salida_ganancia.costo_total',
                             'vw_salida_ganancia.venta_total',

@@ -23,6 +23,7 @@
               <th>Cliente</th>
               <th>Fecha</th>
               <th>Fecha de Pago</th>
+              <th>Medio de Pago</th>
               <th>Observación</th>
               <th class="col-1">Extra</th>
               <th class="col-1">Costo delivery</th>
@@ -41,6 +42,7 @@
                 
                 <td class="col-1">{{ $item->fecha }}</td>
                 <td class="col-1">{{ $item->fecha_pago }}</td>
+                <td class="col-1">{{ $item->medio_pago }}</td>
                 <td>{{ $item->observacion }}</td>
                 <td class="col-1">{{ $item->costo_compra }}</td>
                 <td class="col-1">{{ $item->costo_delivery }}</td>
@@ -70,7 +72,7 @@
             @endforeach
           </tbody>
           <tfoot>
-            <th colspan="4">Total</th>
+            <th colspan="5">Total</th>
             <td>{{ $salidas->sum('costo_compra') }}</td>
             <td>{{ $salidas->sum('costo_delivery') }}</td>
             <td>{{ $salidas->sum('precio_delivery') }}</td>

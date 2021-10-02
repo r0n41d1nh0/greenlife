@@ -51,6 +51,18 @@
           <label>Fecha de Pago</label>
           <input type="text" name="fecha_pago" class="form-control form-control-sm border-primary border-3 datepicker" autocomplete="off" value="{{ $salida->fecha_pago }}">
         </div>
+        <div class="col-md-2">
+          <label>Medio de Pago</label>
+          <select name="medio_pago" class="form-control form-control-sm border-primary border-3" >
+            <option value=""></option>
+            <option value="Efectivo" @if($salida->medio_pago=="Efectivo") selected @endif >Efectivo</option>
+            <option value="Yape" @if($salida->medio_pago=="Yape") selected @endif >Yape</option>
+            <option value="Plin" @if($salida->medio_pago=="Plin") selected @endif >Plin</option>
+            <option value="BCP" @if($salida->medio_pago=="BCP") selected @endif >BCP</option>
+            <option value="Scotiabank" @if($salida->medio_pago=="Scotiabank") selected @endif >Scotiabank</option>
+            <option value="BBVA" @if($salida->medio_pago=="BBVA") selected @endif >BBVA</option>
+          </select>
+        </div>
         <div class="col-md-6">
           <label>Observación</label>
           <input type="text" name="observacion" class="form-control form-control-sm border-primary border-3" autocomplete="off" value="{{ $salida->observacion }}">

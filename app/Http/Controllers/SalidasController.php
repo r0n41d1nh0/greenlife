@@ -36,6 +36,7 @@ class SalidasController extends Controller
 			'precio_delivery' => $request->precio_delivery,
 			'fecha' => $request->fecha,
             'fecha_pago' => $request->fecha_pago,
+			'medio_pago' => $request->medio_pago,
             'observacion' => $request->observacion
 		]);
         return redirect()->route('salidas.lista')->withSuccess('Operación exitosa');
@@ -57,6 +58,7 @@ class SalidasController extends Controller
 		$salida->precio_delivery = $request->precio_delivery;
 		$salida->fecha = $request->fecha;
         $salida->fecha_pago = $request->fecha_pago;
+		$salida->medio_pago = $request->medio_pago;
         $salida->observacion = $request->observacion;
 	
         $salida->save(); 
