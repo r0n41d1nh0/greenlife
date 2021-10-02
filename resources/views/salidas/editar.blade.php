@@ -40,6 +40,14 @@
           <input type="number" name="costo_delivery" step="any" class="form-control form-control-sm border-primary border-3" value="{{ $salida->costo_delivery }}">
         </div>
         <div class="col-md-2">
+          <label>Costo agencia</label>
+          <input type="number" name="costo_agencia" step="any" class="form-control form-control-sm border-primary border-3" value="{{ $salida->costo_agencia }}">
+        </div>
+        <div class="col-md-2">
+          <label>Costo traslado</label>
+          <input type="number" name="costo_retorno" step="any" class="form-control form-control-sm border-primary border-3" value="{{ $salida->costo_retorno }}">
+        </div>
+        <div class="col-md-2">
           <label>Precio delivery</label>
           <input type="number" name="precio_delivery" step="any" class="form-control form-control-sm border-primary border-3" value="{{ $salida->precio_delivery }}">
         </div>
