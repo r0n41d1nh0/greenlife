@@ -30,7 +30,7 @@
         </div>
         <div class="col-md-6">
           <label>Direccion</label>
-          <input type="text" name="direccion" class="form-control form-control-sm border-primary border-3" autocomplete="off" required>
+          <input type="text" name="direccion" class="form-control form-control-sm border-primary border-3" autocomplete="off">
         </div>
         <div class="col-md-2">
           <label>Telefono</label>

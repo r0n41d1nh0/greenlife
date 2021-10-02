@@ -28,7 +28,7 @@
         </div>
         <div class="col-md-2">
           <label>Documento</label>
-          <input type="text" name="documento" class="form-control form-control-sm border-primary border-3" autocomplete="off" value="{{ $persona->documento }}" required>
+          <input type="text" name="documento" class="form-control form-control-sm border-primary border-3" autocomplete="off" value="{{ $persona->documento }}" >
         </div>
         <div class="col-md-4">
           <label>Nombres</label>
@@ -36,11 +36,11 @@
         </div>
         <div class="col-md-6">
           <label>Direccion</label>
-          <input type="text" name="direccion" class="form-control form-control-sm border-primary border-3" autocomplete="off" value="{{ $persona->direccion }}" required>
+          <input type="text" name="direccion" class="form-control form-control-sm border-primary border-3" autocomplete="off" value="{{ $persona->direccion }}">
         </div>
         <div class="col-md-2">
           <label>Telefono</label>
-          <input type="text" name="telefono" class="form-control form-control-sm border-primary border-3" autocomplete="off" value="{{ $persona->telefono }}" required>
+          <input type="text" name="telefono" class="form-control form-control-sm border-primary border-3" autocomplete="off" value="{{ $persona->telefono }}">
         </div>
         <div class="col-md-2">
           <label>Tipo</label>
