@@ -38,10 +38,6 @@
           <input type="number" name="costo_agencia" step="any" class="form-control form-control-sm border-primary border-3">
         </div>
         <div class="col-md-2">
-          <label>Costo retorno</label>
-          <input type="number" name="costo_retorno" step="any" class="form-control form-control-sm border-primary border-3">
-        </div>
-        <div class="col-md-2">
           <label>Precio delivery</label>
           <input type="number" name="precio_delivery" step="any" class="form-control form-control-sm border-primary border-3">
         </div>

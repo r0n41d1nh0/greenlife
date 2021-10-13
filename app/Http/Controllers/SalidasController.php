@@ -34,7 +34,6 @@ class SalidasController extends Controller
             'costo_compra' => $request->costo_compra,
             'costo_delivery' => $request->costo_delivery,
 			'costo_agencia' => $request->costo_agencia,
-			'costo_retorno' => $request->costo_retorno,
 			'precio_delivery' => $request->precio_delivery,
 			'fecha' => $request->fecha,
             'fecha_pago' => $request->fecha_pago,
@@ -58,7 +57,6 @@ class SalidasController extends Controller
         $salida->costo_compra = $request->costo_compra;
         $salida->costo_delivery = $request->costo_delivery;
 		$salida->costo_agencia = $request->costo_agencia;
-		$salida->costo_retorno = $request->costo_retorno;
 		$salida->precio_delivery = $request->precio_delivery;
 		$salida->fecha = $request->fecha;
         $salida->fecha_pago = $request->fecha_pago;
