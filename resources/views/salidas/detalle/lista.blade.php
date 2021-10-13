@@ -39,15 +39,16 @@
       <div class="table-responsive">
         <table class="table table-bordered table-condensed table-sm border-primary" >
           <thead>
-            <tr>
-              <th>Prov.</th>
-              <th>Fec. Ingreso</th>
-              <th>Producto</th>
+            <tr class="text-center">
+              <th class="col-1">Prov.</th>
+              <th class="col-1">Fec. Ingreso</th>
+              <th class="col-1">Producto</th>
               <th>Dimensión</th>
               <th class="col-1">Cant. comprada</th>
               <th class="col-1">Costo compra</th>
               <th class="col-1">Cant. separada</th>
-              <th class="col-1 table-dark">Cant. disponible</th>
+              <th class="col-1">Cant. vendida</th>
+              <th class="col-1" style="background-color:#D3D5DA">Cant. disponible</th>
               <th class="col-1">Cant.</th>
               <th class="col-1">Sustrato</th>
               <th class="col-1">P. Venta</th>
@@ -63,8 +64,9 @@
                 <td>{{ $item->dimension }}</td>
                 <td>{{ $item->cantidad_ingresada }}</td>
                 <td>{{ $item->costo }}</td>
-                <td>{{ $item->cantidad_salida }}</td>
-                <td class="table-dark">{{ $item->cantidad_ingresada - $item->cantidad_salida }}</td>
+                <td>{{ $item->cantidad_separada }}</td>
+                <td>{{ $item->cantidad_salida - $item->cantidad_separada }}</td>
+                <td style="background-color:#D3D5DA">{{ $item->cantidad_ingresada - $item->cantidad_salida }}</td>
                 <td><input type="number" name="cantidad" class="form-control form-control-sm border border-primary border-3" value="1" min="1" max="{{ $item->cantidad_ingresada - $item->cantidad_salida }}" autocomplete="off" form="{{ $item->id }}" required></td>
                 <td><input type="number" name="sustrato" class="form-control form-control-sm border border-primary border-3" step="any" value="0" autocomplete="off" form="{{ $item->id }}" required></td>
                 <td><input type="number" name="precio_venta" class="form-control form-control-sm border border-primary border-3" step="any" value="{{ $item->precio_venta }}" autocomplete="off" form="{{ $item->id }}" required></td>
@@ -75,7 +77,7 @@
                     <input type="hidden" name="salida_id" value="{{ $salida->id }}">
                     <input type="hidden" name="producto_id" value="{{ $item->producto_id }}">
                     <input type="hidden" name="costo" value="{{ $item->costo }}">
-                    <button class="btn btn-primary btn-sm btn-confirm">Agregar a Pedido</button>
+                    <button class="btn btn-primary btn-sm btn-confirm">Agregar</button>
                   </form>
                 </td>
             </tr>
@@ -89,7 +91,7 @@
       <div class="table-responsive">
         <table class="table table-bordered table-condensed table-sm border-primary" >
           <thead>
-            <tr>
+            <tr class="text-center">
               <th>Producto</th>
               <th class="col-1">Cantidad</th>
               <th class="col-1">Costo</th>

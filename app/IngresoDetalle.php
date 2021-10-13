@@ -37,7 +37,8 @@ class IngresoDetalle extends Model
                             'vw_ingresos_sin_salida_completa.dimension',
                             'vw_ingresos_sin_salida_completa.cantidad_ingresada',
                             'vw_ingresos_sin_salida_completa.costo',
-                            'vw_ingresos_sin_salida_completa.cantidad_salida'
+                            'vw_ingresos_sin_salida_completa.cantidad_salida',
+                            'vw_ingresos_sin_salida_completa.cantidad_separada'
                             )
                         ->orderBy('ingreso_detalle.id','desc');
     }
