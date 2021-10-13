@@ -30,7 +30,7 @@
               <th class="col-1">Costo agencia<br>B</th>
               <th class="col-1">Precio delivery<br>C</th>
               <th class="col-1" style="background-color:#D3D5DA">Ganacia por pedido</th>
-              <th class="col-1" style="background-color:#D3D5DA">Ganacia por delivery<br>C-(A+B)+E</th>
+              <th class="col-1" style="background-color:#D3D5DA">Ganacia por delivery<br>C-(A+B)+D</th>
               <th class="col-1">Ganacia Total</th>
               <th></th>
               <th></th>
