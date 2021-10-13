@@ -20,18 +20,18 @@
         <table class="table table-bordered table-condensed table-sm border-primary" id="dataTable" width="100%" cellspacing="0">
           <thead>
             <tr>
-              <th>Cliente</th>
-              <th>Fecha</th>
-              <th>Fecha de Pago</th>
-              <th>Medio de Pago</th>
-              <th>Observación</th>
-              <th class="col-1">Extra<br>D</th>
-              <th class="col-1">Costo delivery<br>A</th>
-              <th class="col-1">Costo agencia<br>B</th>
-              <th class="col-1">Precio delivery<br>C</th>
-              <th class="col-1" style="background-color:#D3D5DA">Ganacia por pedido</th>
-              <th class="col-1" style="background-color:#D3D5DA">Ganacia por delivery<br>C-(A+B)+D</th>
-              <th class="col-1">Ganacia Total</th>
+              <th class="text-center">Cliente</th>
+              <th class="text-center">Fecha</th>
+              <th class="text-center">Fecha de Pago</th>
+              <th class="text-center">Medio de Pago</th>
+              <th class="text-center">Observación</th>
+              <th class="col-1 text-center">Extra<br>D</th>
+              <th class="col-1 text-center">Costo delivery<br>A</th>
+              <th class="col-1 text-center">Costo agencia<br>B</th>
+              <th class="col-1 text-center">Precio delivery<br>C</th>
+              <th class="col-1 text-center" style="background-color:#D3D5DA">Ganacia por pedido</th>
+              <th class="col-1 text-center" style="background-color:#D3D5DA">Ganacia por delivery<br>C-(A+B)+D</th>
+              <th class="col-1 text-center">Ganacia Total</th>
               <th></th>
               <th></th>
               <th></th>
