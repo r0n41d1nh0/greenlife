@@ -2,7 +2,7 @@
 @section('content')
   <ol class="breadcrumb">
     <li class="breadcrumb-item">
-      <a href="{{ route('inventario.lista') }}">Inventario</a>
+      <a href="{{ route('inventario.lista') }}">Stock</a>
     </li>
   </ol>
   <hr>
