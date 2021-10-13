@@ -28,7 +28,7 @@
               <th class="col-1">Extra</th>
               <th class="col-1">Costo delivery</th>
               <th class="col-1">Costo agencia</th>
-              <th class="col-1">Costo traslado</th>
+              <th class="col-1">Costo retorno</th>
               <th class="col-1">Precio delivery</th>
               <th class="col-1">Ganacia por Producto</th>
               <th class="col-1">Ganacia Total</th>
