@@ -25,12 +25,12 @@
               <th>Fecha de Pago</th>
               <th>Medio de Pago</th>
               <th>Observación</th>
-              <th class="col-1">Extra</th>
-              <th class="col-1">Costo delivery</th>
-              <th class="col-1">Costo agencia</th>
-              <th class="col-1">Precio delivery</th>
+              <th class="col-1">Extra<br>D</th>
+              <th class="col-1">Costo delivery<br>A</th>
+              <th class="col-1">Costo agencia<br>B</th>
+              <th class="col-1">Precio delivery<br>C</th>
               <th class="col-1" style="background-color:#D3D5DA">Ganacia por pedido</th>
-              <th class="col-1" style="background-color:#D3D5DA">Ganacia por delivery</th>
+              <th class="col-1" style="background-color:#D3D5DA">Ganacia por delivery<br>C-(A+B)+E</th>
               <th class="col-1">Ganacia Total</th>
               <th></th>
               <th></th>
