@@ -25,6 +25,7 @@ Route::get('/productos/nuevo', 'App\Http\Controllers\ProductosController@nuevo')
 Route::post('/productos/nuevo', 'App\Http\Controllers\ProductosController@registrar')->name('productos.registrar');
 Route::get('/productos/{id}/editar', 'App\Http\Controllers\ProductosController@editar')->name('productos.editar');
 Route::post('/productos/actualizar', 'App\Http\Controllers\ProductosController@actualizar')->name('productos.actualizar');
+Route::post('/productos/borrar', 'App\Http\Controllers\ProductosController@borrar')->name('productos.borrar');
 
 //Personas
 Route::get('/personas', 'App\Http\Controllers\PersonasController@lista')->name('personas.lista');

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Producto;
+use App\Inventario;
 
 
 class ProductosController extends Controller
@@ -47,5 +48,16 @@ class ProductosController extends Controller
 	
         $producto->save(); 
 		return redirect()->route('productos.editar',$producto->id)->withSuccess('Operación exitosa');
+	}
+
+	public function borrar(Request $request){
+		$inventario =Inventario::where('producto_id',$request->id)->get();
+		if(count($inventario)>0){
+			return redirect()->route('productos.lista')->withErrors('No es posible borrar, el producto tiene movimientos');
+		} else {
+			Producto::where('id',$request->id)->delete();
+			return redirect()->route('productos.lista')->withSuccess('Operación exitosa');
+		}
+		
 	}
 }
