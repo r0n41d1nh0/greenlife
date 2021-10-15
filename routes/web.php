@@ -62,3 +62,5 @@ Route::post('/salidas/borrar', 'App\Http\Controllers\SalidasController@borrar')-
 Route::get('/salidas/{id}/detalle', 'App\Http\Controllers\SalidasController@lista_detalle')->name('salidas.detalle.lista');
 Route::post('/salidas/nuevo-detalle', 'App\Http\Controllers\SalidasController@registrar_detalle')->name('salidas.detalle.registrar');
 Route::post('/salidas/borrar-detalle', 'App\Http\Controllers\SalidasController@borrar_detalle')->name('salidas.detalle.borrar');
+Route::get('/salidas/detalle/{id}/editar', 'App\Http\Controllers\SalidasController@editar_detalle')->name('salidas.detalle.editar');
+Route::post('/salidas/actualizar-detalle', 'App\Http\Controllers\SalidasController@actualizar_detalle')->name('salidas.detalle.actualizar');

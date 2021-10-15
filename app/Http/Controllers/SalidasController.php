@@ -124,8 +124,8 @@ class SalidasController extends Controller
 		return redirect()->route('salidas.lista')->withSuccess('Operación exitosa');
 	}
 
-	public function borrar(Request $request){
-
+	public function borrar(Request $request)
+	{
 		$salida=Salida::find($request->salida_id);
 		if($salida->confirmado==1){
 			return redirect()->route('salidas.lista')->withErrors('Salida fue confirmada');
@@ -135,5 +135,24 @@ class SalidasController extends Controller
 
 		$salida->delete();
 		return redirect()->route('salidas.lista')->withSuccess('Operación exitosa');
+	}
+
+	public function editar_detalle($id)
+	{
+		$detalle = SalidaDetalle::find($id);
+		$salida = Salida::lista()->where('salida.id',$detalle->salida_id)->first();
+		$item = IngresoDetalle::lista_sin_salida_completa()->where('ingreso_detalle.id',$detalle->ingreso_detalle_id)->first();
+	
+    	return view('salidas.detalle.editar',compact(['salida','item','detalle']));
+	}
+
+	public function actualizar_detalle(Request $request){
+
+		$detalle = SalidaDetalle::find($request->id);
+		$detalle->cantidad = $request->cantidad;
+		$detalle->sustrato = $request->sustrato;
+		$detalle->precio_venta = $request->precio_venta;
+		$detalle->save();
+		return redirect()->route('salidas.detalle.lista',$detalle->salida_id )->withSuccess('Operación exitosa');
 	}
 }
