@@ -51,7 +51,7 @@
                     <td>{{ $item->cantidad_separada }}</td>
                     <td>{{ $item->cantidad_salida - $item->cantidad_separada }}</td>
                     <td style="background-color:#D3D5DA">{{ $item->cantidad_ingresada - $item->cantidad_salida }}</td>
-                    <td><input type="number" name="cantidad" class="form-control form-control-sm border border-primary border-3" value="{{ $detalle->cantidad }}" min="1" max="{{ $item->cantidad_ingresada - $item->cantidad_salida }}" autocomplete="off" form="{{ $item->id }}" required></td>
+                    <td><input type="number" name="cantidad" class="form-control form-control-sm border border-primary border-3" value="{{ $detalle->cantidad }}" min="1" autocomplete="off" form="{{ $item->id }}" required></td>
                     <td><input type="number" name="sustrato" class="form-control form-control-sm border border-primary border-3" step="any" value="{{ $detalle->sustrato }}" autocomplete="off" form="{{ $item->id }}" required></td>
                     <td><input type="number" name="precio_venta" class="form-control form-control-sm border border-primary border-3" step="any" value="{{ $detalle->precio_venta }}" autocomplete="off" form="{{ $item->id }}" required></td>
                     <td>
