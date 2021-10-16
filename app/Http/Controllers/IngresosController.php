@@ -11,6 +11,7 @@ use App\Persona;
 use App\Producto;
 use App\Inventario;
 use App\Kardex;
+use App\SalidaDetalle;
 
 class IngresosController extends Controller
 {
@@ -96,7 +97,11 @@ class IngresosController extends Controller
 	}
 
 	public function borrar_detalle(Request $request){
-		/**Pos: Validar que no tenga salida*/
+
+		if(SalidaDetalle::where('ingreso_detalle_id',$request->id)->count() > 0) {
+			return redirect()->route('ingresos.detalle.lista',$request->ingreso_id )->withErrors('No es posible borrar, el producto tiene movimientos de salida');
+		}
+
 		$ingreso_detalle = IngresoDetalle::find($request->id);
 		$inventario = Inventario::where('producto_id',$ingreso_detalle->producto_id)->first();
 		$cantidad_inicial = $inventario->cantidad;
@@ -125,7 +130,10 @@ class IngresosController extends Controller
 
 	public function actualizar_detalle(Request $request)
 	{
-		/**Pos: Validar que no tenga salida*/
+		if(SalidaDetalle::where('ingreso_detalle_id',$request->id)->count() > 0) {
+			return redirect()->route('ingresos.detalle.lista',$request->ingreso_id )->withErrors('No es posible actualizar, el producto tiene movimientos de salida');
+		}
+
 		$ingreso_detalle = IngresoDetalle::find($request->id);
 		$inventario = Inventario::where('producto_id',$ingreso_detalle->producto_id)->first();
 		$cantidad_inicial = $inventario->cantidad;
