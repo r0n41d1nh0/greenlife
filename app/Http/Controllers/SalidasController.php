@@ -141,7 +141,7 @@ class SalidasController extends Controller
 	{
 		$detalle = SalidaDetalle::find($id);
 		$salida = Salida::lista()->where('salida.id',$detalle->salida_id)->first();
-		$item = IngresoDetalle::lista_sin_salida_completa()->where('ingreso_detalle.id',$detalle->ingreso_detalle_id)->first();
+		$item = IngresoDetalle::lista_ingresos()->where('ingreso_detalle.id',$detalle->ingreso_detalle_id)->first();
 	
     	return view('salidas.detalle.editar',compact(['salida','item','detalle']));
 	}

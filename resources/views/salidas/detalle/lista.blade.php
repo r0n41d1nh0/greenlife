@@ -117,7 +117,11 @@
                 <td>{{ $item->precio_venta }}</td>
                 <td>{{ $item->precio_venta*$item->cantidad }}</td>
                 <td>{{ $item->precio_venta*$item->cantidad - $item->costo*$item->cantidad - $item->sustrato*$item->cantidad }}</td>
-                <td class="col-1"><a href="{{ route('salidas.detalle.editar', $item->id )}}" class="btn btn-primary btn-sm">Editar</a></td>
+                <td class="col-1">
+                  @if($salida->confirmado != 1)
+                    <a href="{{ route('salidas.detalle.editar', $item->id )}}" class="btn btn-primary btn-sm">Editar</a>
+                  @endif
+                </td>
                 <td class="col-1">
                   @if($salida->confirmado != 1)
                   <form action="{{ route('salidas.detalle.borrar') }}" method="post" onsubmit="return confirm('¿Está seguro de realizar esta acción?');">

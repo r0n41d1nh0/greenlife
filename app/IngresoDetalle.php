@@ -43,4 +43,22 @@ class IngresoDetalle extends Model
                         ->orderBy('ingreso_detalle.id','desc');
     }
 
+    public static function lista_ingresos(){
+        return IngresoDetalle::join('vw_ingresos','ingreso_detalle.id','=','vw_ingresos.id')
+                        ->select(
+                            'ingreso_detalle.id',
+                            'ingreso_detalle.producto_id',
+                            'vw_ingresos.proveedor',
+                            'vw_ingresos.fecha_ingreso',
+                            'vw_ingresos.producto',
+                            'vw_ingresos.precio_venta',
+                            'vw_ingresos.dimension',
+                            'vw_ingresos.cantidad_ingresada',
+                            'vw_ingresos.costo',
+                            'vw_ingresos.cantidad_salida',
+                            'vw_ingresos.cantidad_separada'
+                            )
+                        ->orderBy('ingreso_detalle.id','desc');
+    }
+
 }
